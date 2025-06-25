@@ -1,183 +1,464 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
-body{
-   
-    background-image: url('Vanify bg1.png');
-    background-size: 1600px 1000px;
-    background-repeat: no-repeat;
-}
 
-*{
+/* Reset and Base Styles */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-nav{
-    font-family: 'Ubuntu', sans-serif;
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: white;
 }
 
-nav ul{
+/* Navigation Styles */
+nav {
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav ul {
+    list-style: none;
     display: flex;
     align-items: center;
-    list-style-type: none;
-    height: 65px;
-    background-color: black;
-    color: white;
-    
-
-}
-
-.getvanify{
-    margin: 1061px;
-    color: rgb(210, 25, 210);
-    background-color: #21242E;
-    border-radius: 31px;
-    padding: 4px 16px;
-    font-size: 11px;
-    border-color: rgb(210, 25, 210);
-  
-}
-
-
-nav ul li{
-    padding: 0 12px;
-}
-
-nav ul li a{
-    color: white;
-    list-style-type: none;
-    text-decoration: none;
-}
-.brand img{
-    width: 60px;
-    padding: 0 8px;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    flex-wrap: wrap;
 }
 
 .brand {
     display: flex;
     align-items: center;
-    font-weight: bolder;
-    font-size: 1.3rem;
-    color: rgb(210, 25, 210);
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ff6b6b;
 }
 
-.topnav input[type=text] {
-    float: right;
-    padding: 0 20px;
-    border: rgb(210, 25, 210);
-    margin-top: 2px;
-    margin-right: 44px;
-    font-size: 14px;
-    
-  }
+.brand img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
 
-  @media screen and (max-width: 600px) {
-    .topnav a, .topnav input[type=text] {
-      float: none;
-      display: block;
-      text-align: left;
-      width: 100%;
-      margin: 0;
-      padding: 14px;
-    }
-    .topnav input[type=text] {
-      border: 1px solid #ccc;
-    }
-  }
+nav ul li {
+    margin: 0 1rem;
+}
 
-.container{
-    min-height: 72vh;
-    color: rgb(255, 255, 255);
-    font-family: 'Varela Round', sans-serif;
-   display: flex;
-   margin: 23px auto;
-   width: 30%;
-   border-radius: 12px;
-   padding: 34px;
-   background-image: url('vanify bg.png');
-   background-size:  652px 755px;
-   background-repeat: no-repeat;
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+}
 
-   
- }
+nav ul li a:hover {
+    color: #ff6b6b;
+    background: rgba(255, 107, 107, 0.1);
+}
 
-.bottom{
-    position: sticky;
-    bottom: 0;
-    height: 130px;
-    background-color: black;
-    color:rgb(210, 25, 210);
+.getvanify {
+    background: linear-gradient(45deg, #ff6b6b, #ffa500);
+    color: white;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.getvanify:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+}
+
+/* Container Layout */
+.container {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column; 
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+    gap: 2rem;
+    min-height: calc(100vh - 200px);
 }
 
-.bottom bar{
-    color: red;
+/* Song List Styles */
+.songList {
+    flex: 2;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
-
-.icons{
-    margin-top: 14px; 
-}
-.icons i{
-    cursor: pointer;
-}
-
-#myProgressBar{
-    width: 80vw; 
-    cursor: pointer;
+.songList h1 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    background: linear-gradient(45deg, #ff6b6b, #ffa500);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
-.songItemContainer{
-    margin-top: 40px;
-}
-
-.songItem{
-    height: 50px;
+.songItemContainer {
     display: flex;
-    background-color: white;
-    
-    color: black;
-    margin: 12px 0;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.songItem {
+    display: flex;
     align-items: center;
-    border-radius: 34px;
-}
-
-.songItem img{
-    width: 43px;
-    margin: 0 23px;
-    border-radius: 34px;
-}
-
-.timestamp{
-    margin: 0 23px;
-}
-
-.timestamp i{
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    border-radius: 15px;
+    transition: all 0.3s ease;
     cursor: pointer;
 }
 
-.songInfo{
+.songItem:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateX(10px);
+}
+
+.songItem img {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    margin-right: 1rem;
+    object-fit: cover;
+}
+
+.songName {
+    flex: 1;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.songlistplay {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.timestamp {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.songItemPlay {
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.songItemPlay:hover {
+    color: #ff6b6b;
+    transform: scale(1.1);
+}
+
+/* Song Banner */
+.songBanner {
+    flex: 1;
+    background: url('Vanify.png') center/cover;
+    border-radius: 20px;
+    min-height: 400px;
+    position: relative;
+    overflow: hidden;
+}
+
+.songBanner::before {
+    content: '';
     position: absolute;
-    left: 10vw;
-    font-family: fantasy;
-   
-
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(102, 126, 234, 0.7), rgba(118, 75, 162, 0.7));
+    border-radius: 20px;
 }
 
-.songInfo img{
-    opacity: 0;
-    transition: opacity 0.4s ease-in;
-    width: 86px;
-    margin-bottom: -19px;
-
+/* Bottom Player Controls */
+.bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(10px);
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    z-index: 100;
 }
 
-@media only screen and (max-width: 1100px) {
-    body {
-      background-color: red;
+#myProgressBar {
+    flex: 1;
+    height: 6px;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.3);
+    outline: none;
+    cursor: pointer;
+}
+
+#myProgressBar::-webkit-slider-thumb {
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #ff6b6b;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+#myProgressBar::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #ff6b6b;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.icons i {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: white;
+}
+
+.icons i:hover {
+    color: #ff6b6b;
+    transform: scale(1.1);
+}
+
+.songInfo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    min-width: 200px;
+}
+
+.songInfo img {
+    border-radius: 50%;
+    animation: rotate 3s linear infinite;
+}
+
+.songInfo span {
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 150px;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: column;
+        padding: 0 1rem;
     }
-  }
+    
+    .songBanner {
+        min-height: 250px;
+        order: -1;
+    }
+    
+    nav ul {
+        padding: 0 1rem;
+    }
+    
+    .songList {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: center;
+    }
+    
+    .brand {
+        order: -1;
+        flex-basis: 100%;
+        justify-content: center;
+        margin-bottom: 1rem;
+    }
+    
+    .getvanify {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .songList h1 {
+        font-size: 1.5rem;
+    }
+    
+    .songItem {
+        padding: 0.8rem;
+    }
+    
+    .songItem img {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .songName {
+        font-size: 1rem;
+    }
+    
+    .bottom {
+        padding: 1rem;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+    
+    .icons {
+        order: 1;
+        gap: 1rem;
+    }
+    
+    .icons i {
+        font-size: 2rem !important;
+    }
+    
+    .songInfo {
+        order: 2;
+        min-width: auto;
+        flex: 1;
+    }
+    
+    #myProgressBar {
+        order: 3;
+        flex-basis: 100%;
+        margin-top: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+    
+    nav ul li {
+        margin: 0.2rem 0;
+    }
+    
+    .container {
+        margin: 1rem auto;
+        padding: 0 0.5rem;
+    }
+    
+    .songList {
+        padding: 1rem;
+    }
+    
+    .songList h1 {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+    }
+    
+    .songItem {
+        padding: 0.6rem;
+        flex-wrap: wrap;
+    }
+    
+    .songName {
+        font-size: 0.9rem;
+        flex-basis: 100%;
+        margin: 0.5rem 0;
+    }
+    
+    .songlistplay {
+        flex-basis: 100%;
+        justify-content: space-between;
+    }
+    
+    .bottom {
+        padding: 0.8rem;
+    }
+    
+    .songInfo span {
+        max-width: 120px;
+        font-size: 0.9rem;
+    }
+    
+    /* Hide gif on very small screens */
+    .songInfo img {
+        width: 35px;
+    }
+}
+
+/* Dark mode enhancements */
+@media (prefers-color-scheme: dark) {
+    .songItem {
+        background: rgba(255, 255, 255, 0.05);
+    }
+    
+    .songItem:hover {
+        background: rgba(255, 255, 255, 0.1);
+    }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+    nav {
+        background: black;
+    }
+    
+    .songItem {
+        border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+    
+    .bottom {
+        background: black;
+    }
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .songInfo img {
+        animation: none;
+    }
+}
