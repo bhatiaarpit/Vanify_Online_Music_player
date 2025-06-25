@@ -1,97 +1,230 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Vanify - Your favourite music is here</title>
-        <link rel="stylesheet" href="style.css">
-        </head>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vanify - Your favourite music is here</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
 <body>
-    <nav>
+    <!-- Mobile Menu Toggle -->
+    <div class="mobile-menu-toggle" id="mobileMenuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <nav id="navbar">
         <ul>
-            <li class="brand"><img src="Vanify.png" alt="Vanify">Vanify</li>
-            <li> <a href="index.html"> Home</a></li>
-            <li><a href="latestsong.html" >Latest Songs</a></li>
+            <li class="brand">
+                <img src="Vanify.png" alt="Vanify">
+                <span>Vanify</span>
+            </li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="latestsong.html">Latest Songs</a></li>
             <li><a href="About.html">About</a></li>
-            <button class="getvanify" >Get Vanify</button>
-            
-            </div>
+            <li><button class="getvanify">Get Vanify</button></li>
         </ul>
     </nav>
 
     <div class="container">
         <div class="songList">
             <h1>Most - Loving Songs</h1>
-            <div class="songItemContainer">
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search for songs..." class="search-input">
+                <i class="fas fa-search search-icon"></i>
+            </div>
+            
+            <div class="songItemContainer" id="songItemContainer">
                 <div class="songItem">
-                    <img alt="1">
-                    <span class="songName">Let me Love You</span>
-                    <span class="songlistplay"><span class="timestamp">03:32 <i id="0" class="far songItemPlay fa-play-circle"></i> </span></span>
+                    <img src="covers/1.jpg" alt="Song Cover">
+                    <div class="songDetails">
+                        <span class="songName">Jannat Ve - Darshan Raval</span>
+                        <span class="artistName">Darshan Raval</span>
+                    </div>
+                    <span class="songlistplay">
+                        <span class="timestamp">03:32 
+                            <i id="0" class="far songItemPlay fa-play-circle"></i>
+                        </span>
+                    </span>
                 </div>
+                
                 <div class="songItem">
-                    
-                    <img alt="1">
-                    <span class="songName">Let me Love You</span>
-                    <span class="songlistplay"><span class="timestamp">03:08 <i id="1" class="far songItemPlay fa-play-circle"></i> </span></span>
+                    <img src="covers/2.jpg" alt="Song Cover">
+                    <div class="songDetails">
+                        <span class="songName">Baawla - Badshah</span>
+                        <span class="artistName">Badshah</span>
+                    </div>
+                    <span class="songlistplay">
+                        <span class="timestamp">03:08 
+                            <i id="1" class="far songItemPlay fa-play-circle"></i>
+                        </span>
+                    </span>
                 </div>
+
                 <div class="songItem">
-                    <img alt="1">
-                    <span class="songName">Let me Love You</span>
-                    <span class="songlistplay"><span class="timestamp">02:57 <i id="2" class="far songItemPlay fa-play-circle"></i> </span></span>
+                    <img src="covers/3.jpg" alt="Song Cover">
+                    <div class="songDetails">
+                        <span class="songName">Kabhii Tumhhe - Shershah</span>
+                        <span class="artistName">Shershah</span>
+                    </div>
+                    <span class="songlistplay">
+                        <span class="timestamp">02:57 
+                            <i id="2" class="far songItemPlay fa-play-circle"></i>
+                        </span>
+                    </span>
                 </div>
+
                 <div class="songItem">
-                    <img alt="1">
-                    <span class="songName">Let me Love You</span>
-                    <span class="songlistplay"><span class="timestamp">04:08 <i id="3" class="far songItemPlay fa-play-circle"></i> </span></span>
+                    <img src="covers/4.jpg" alt="Song Cover">
+                    <div class="songDetails">
+                        <span class="songName">Sakhiyan 2.0 - Bell Bottom</span>
+                        <span class="artistName">Bell Bottom</span>
+                    </div>
+                    <span class="songlistplay">
+                        <span class="timestamp">04:08 
+                            <i id="3" class="far songItemPlay fa-play-circle"></i>
+                        </span>
+                    </span>
                 </div>
+
                 <div class="songItem">
-                    <img alt="1">
-                    <span class="songName">Let me Love You</span>
-                    <span class="songlistplay"><span class="timestamp">04:33 <i id="4" class="far songItemPlay fa-play-circle"></i> </span></span>
+                    <img src="covers/5.jpg" alt="Song Cover">
+                    <div class="songDetails">
+                        <span class="songName">Bairiyaa - Raamaya Vastavaiya</span>
+                        <span class="artistName">Raamaya Vastavaiya</span>
+                    </div>
+                    <span class="songlistplay">
+                        <span class="timestamp">04:33 
+                            <i id="4" class="far songItemPlay fa-play-circle"></i>
+                        </span>
+                    </span>
                 </div>
+
                 <div class="songItem">
-                    <img alt="1">
-                    <span class="songName">Let me Love You</span>
-                    <span class="songlistplay"><span class="timestamp">02:57 <i id="5" class="far songItemPlay fa-play-circle"></i> </span></span>
+                    <img src="covers/6.jpg" alt="Song Cover">
+                    <div class="songDetails">
+                        <span class="songName">Kinna Sona - Marjaavaan</span>
+                        <span class="artistName">Marjaavaan</span>
+                    </div>
+                    <span class="songlistplay">
+                        <span class="timestamp">02:57 
+                            <i id="5" class="far songItemPlay fa-play-circle"></i>
+                        </span>
+                    </span>
                 </div>
+
                 <div class="songItem">
-                    <img alt="1">
-                    <span class="songName">Let me Love You</span>
-                    <span class="songlistplay"><span class="timestamp">02:57 <i id="6" class="far songItemPlay fa-play-circle"></i> </span></span>
+                    <img src="covers/7.jpg" alt="Song Cover">
+                    <div class="songDetails">
+                        <span class="songName">Bad Munda - Jass Manak</span>
+                        <span class="artistName">Jass Manak</span>
+                    </div>
+                    <span class="songlistplay">
+                        <span class="timestamp">02:57 
+                            <i id="6" class="far songItemPlay fa-play-circle"></i>
+                        </span>
+                    </span>
                 </div>
+
                 <div class="songItem">
-                    <img alt="1">
-                    <span class="songName">Let me Love You</span>
-                    <span class="songlistplay"><span class="timestamp">03:13 <i id="7" class="far songItemPlay fa-play-circle"></i> </span></span>
+                    <img src="covers/8.jpg" alt="Song Cover">
+                    <div class="songDetails">
+                        <span class="songName">Mere Sohneya - Kabir Singh</span>
+                        <span class="artistName">Kabir Singh</span>
+                    </div>
+                    <span class="songlistplay">
+                        <span class="timestamp">03:13 
+                            <i id="7" class="far songItemPlay fa-play-circle"></i>
+                        </span>
+                    </span>
                 </div>
+
                 <div class="songItem">
-                    <img alt="1">
-                    <span class="songName">Let me Love You</span>
-                    <span class="songlistplay"><span class="timestamp">03:32 <i id="8" class="far songItemPlay fa-play-circle"></i> </span></span>
+                    <img src="covers/9.jpg" alt="Song Cover">
+                    <div class="songDetails">
+                        <span class="songName">Kandhe Ka Woh Til - Song</span>
+                        <span class="artistName">Various Artists</span>
+                    </div>
+                    <span class="songlistplay">
+                        <span class="timestamp">03:32 
+                            <i id="8" class="far songItemPlay fa-play-circle"></i>
+                        </span>
+                    </span>
                 </div>
             </div>
         </div>
-        <div class="songBanner"></div>
-    </div>
-
-    <div class="bottom">
-        <input type="range" name="range" id="myProgressBar" min="0" value="0" max="100">
-        <div class="icons">
-            <!-- fontawesome icons -->
-            <i class="fas fa-3x fa-step-backward" id="previous"></i>
-            <i class="far fa-3x fa-play-circle" id="masterPlay"></i>
-            <i class="fas fa-3x fa-step-forward" id="next"></i> 
-        </div>
-
-       
-     <div class="songInfo">
-            <img src="Vanify gif.gif" width="42px" alt="" id="gif"> <span id="masterSongName">Jannat Ve</span>
-        </div>
         
+        <div class="songBanner">
+            <div class="banner-content">
+                <h2>Now Playing</h2>
+                <img src="covers/1.jpg" alt="Current Song" id="bannerImage" class="banner-song-image">
+                <h3 id="bannerSongName">Jannat Ve</h3>
+                <p id="bannerArtistName">Darshan Raval</p>
+                <div class="sound-waves">
+                    <div class="wave"></div>
+                    <div class="wave"></div>
+                    <div class="wave"></div>
+                    <div class="wave"></div>
+                    <div class="wave"></div>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <!-- Volume Control -->
+    <div class="volume-control" id="volumeControl">
+        <i class="fas fa-volume-up volume-icon"></i>
+        <input type="range" id="volumeSlider" min="0" max="100" value="50" class="volume-slider">
+    </div>
+
+    <!-- Player Controls -->
+    <div class="bottom" id="playerControls">
+        <input type="range" name="range" id="myProgressBar" min="0" value="0" max="100">
+        
+        <div class="player-main">
+            <div class="songInfo">
+                <img src="Vanify gif.gif" width="42px" alt="Now Playing" id="gif">
+                <div class="song-text">
+                    <span id="masterSongName">Jannat Ve</span>
+                    <span id="masterArtistName">Darshan Raval</span>
+                </div>
+            </div>
+
+            <div class="icons">
+                <i class="fas fa-random" id="shuffle" title="Shuffle"></i>
+                <i class="fas fa-step-backward" id="previous" title="Previous"></i>
+                <i class="far fa-play-circle" id="masterPlay" title="Play/Pause"></i>
+                <i class="fas fa-step-forward" id="next" title="Next"></i>
+                <i class="fas fa-redo" id="repeat" title="Repeat"></i>
+            </div>
+
+            <div class="time-info">
+                <span id="currentTime">0:00</span>
+                <span id="totalTime">0:00</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div class="toast" id="toast">
+        <div class="toast-content">
+            <i class="fas fa-music"></i>
+            <span id="toastMessage">Song changed!</span>
+        </div>
+    </div>
+
+    <!-- Loading Spinner -->
+    <div class="loading-spinner" id="loadingSpinner">
+        <div class="spinner"></div>
+        <p>Loading music...</p>
+    </div>
+
     <script src="script.js"></script>
     <script src="https://kit.fontawesome.com/26504e4a1f.js" crossorigin="anonymous"></script>
-    
 </body>
 </html>
